@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/stats-base-cumaxabs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Calculate the cumulative maximum absolute value of a strided array.",
   "license": "Apache-2.0",
   "author": {
