@@ -1,0 +1,42 @@
+{
+  "name": "@stdlib/stats-base-cumaxabs",
+  "version": "0.0.0",
+  "description": "Calculate the cumulative maximum absolute value of a strided array.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/stats-base-cumaxabs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "statistics",
+    "stats",
+    "mathematics",
+    "math",
+    "maximum",
+    "max",
+    "math.abs",
+    "abs",
+    "absolute",
+    "absolute value",
+    "range",
+    "extremes",
+    "domain",
+    "extent",
+    "accumulate",
+    "cumulative",
+    "strided",
+    "strided array",
+    "array"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
