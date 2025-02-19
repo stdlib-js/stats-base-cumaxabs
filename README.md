@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-cumaxabs
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import cumaxabs from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-cumaxabs@esm/index.mjs';
+var cumaxabs = require( '@stdlib/stats-base-cumaxabs' );
 ```
 
 #### cumaxabs( N, x, strideX, y, strideY )
@@ -67,11 +85,11 @@ The function has the following parameters:
 
 -   **N**: number of indexed elements.
 -   **x**: input [`Array`][mdn-array] or [`typed array`][mdn-typed-array].
--   **strideX**: index increment for `x`.
+-   **strideX**: stride length for `x`.
 -   **y**: output [`Array`][mdn-array] or [`typed array`][mdn-typed-array].
--   **strideY**: index increment for `y`.
+-   **strideY**: stride length for `y`.
 
-The `N` and `stride` parameters determine which elements in `x` and `y` are accessed at runtime. For example, to compute the cumulative maximum absolute value of every other element in `x`,
+The `N` and stride parameters determine which elements in the strided arrays are accessed at runtime. For example, to compute the cumulative maximum absolute value of every other element in `x`,
 
 ```javascript
 var x = [ 1.0, 2.0, 2.0, -7.0, -2.0, 3.0, 4.0, 2.0 ];
@@ -86,7 +104,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Initial arrays...
 var x0 = new Float64Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
@@ -117,7 +135,7 @@ The function has the following additional parameters:
 -   **offsetX**: starting index for `x`.
 -   **offsetY**: starting index for `y`.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, `offsetX` and `offsetY` parameters support indexing semantics based on a starting indices. For example, to calculate the cumulative maximum absolute value of every other value in `x` starting from the second value and to store in the last `N` elements of `y` starting from the last element
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, offset parameters support indexing semantics based on a starting indices. For example, to calculate the cumulative maximum absolute value of every other value in `x` starting from the second value and to store in the last `N` elements of `y` starting from the last element
 
 ```javascript
 var x = [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ];
@@ -137,6 +155,7 @@ cumaxabs.ndarray( 4, x, 2, 1, y, -1, y.length-1 );
 
 -   If `N <= 0`, both functions return `y` unchanged.
 -   Depending on the environment, the typed versions ([`dcumaxabs`][@stdlib/stats/strided/dcumaxabs], [`scumaxabs`][@stdlib/stats/base/scumaxabs], etc.) are likely to be significantly more performant.
+-   Both functions support array-like objects having getter and setter accessors for array element access (e.g., [`@stdlib/array-base/accessor`][@stdlib/array/base/accessor]).
 
 </section>
 
@@ -148,35 +167,20 @@ cumaxabs.ndarray( 4, x, 2, 1, y, -1, y.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var Float64Array = require( '@stdlib/array-float64' );
+var cumaxabs = require( '@stdlib/stats-base-cumaxabs' );
 
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import cumaxabs from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-cumaxabs@esm/index.mjs';
-
-var y;
-var x;
-var i;
-
-x = new Float64Array( 10 );
-y = new Float64Array( x.length );
-for ( i = 0; i < x.length; i++ ) {
-    x[ i ] = round( randu()*100.0 );
-}
+var x = discreteUniform( 10, 0, 100, {
+    'dtype': 'float64'
+});
+var y = new Float64Array( x.length );
 console.log( x );
 console.log( y );
 
 cumaxabs( x.length, x, 1, y, -1 );
 console.log( y );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -215,7 +219,7 @@ console.log( y );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -280,17 +284,19 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [mdn-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
+[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor
+
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/cumax]: https://github.com/stdlib-js/stats-base-cumax/tree/esm
+[@stdlib/stats/base/cumax]: https://github.com/stdlib-js/stats-base-cumax
 
-[@stdlib/stats/base/cuminabs]: https://github.com/stdlib-js/stats-base-cuminabs/tree/esm
+[@stdlib/stats/base/cuminabs]: https://github.com/stdlib-js/stats-base-cuminabs
 
-[@stdlib/stats/strided/dcumaxabs]: https://github.com/stdlib-js/stats-strided-dcumaxabs/tree/esm
+[@stdlib/stats/strided/dcumaxabs]: https://github.com/stdlib-js/stats-strided-dcumaxabs
 
-[@stdlib/stats/base/scumaxabs]: https://github.com/stdlib-js/stats-base-scumaxabs/tree/esm
+[@stdlib/stats/base/scumaxabs]: https://github.com/stdlib-js/stats-base-scumaxabs
 
 <!-- </related-links> -->
 
