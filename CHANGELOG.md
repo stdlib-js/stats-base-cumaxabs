@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-02-19)
+## Unreleased (2025-03-29)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`c20d551`](https://github.com/stdlib-js/stdlib/commit/c20d5510f41201455c5660f7ca658de68fb0a401) - **refactor:** update paths _(by Aayush Khanna)_
 -   [`c17d1c9`](https://github.com/stdlib-js/stdlib/commit/c17d1c95b7537c91a8d4da9ba24b555895067e66) - **feat:** add support for accessor arrays and refactor `stats/base/cumaxabs` [(#5289)](https://github.com/stdlib-js/stdlib/pull/5289) _(by Vivek Maurya, Athan Reines)_
 -   [`2360eb3`](https://github.com/stdlib-js/stdlib/commit/2360eb3f0a25330f16ae302f9ed4a13c9fe96af1) - **refactor:** update paths _(by Aayush Khanna)_
 
