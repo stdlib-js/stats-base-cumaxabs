@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-26)
+## Unreleased (2025-07-10)
 
 <section class="features">
 
@@ -16,12 +16,25 @@
 
 <!-- /.features -->
 
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#7608](https://github.com/stdlib-js/stdlib/issues/7608)
+
+</section>
+
+<!-- /.issues -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`cb0a268`](https://github.com/stdlib-js/stdlib/commit/cb0a268e3bb793499ac8dd396e57d075837422ee) - **test:** update type expectations in `stats/base/cumaxabs` [(#7611)](https://github.com/stdlib-js/stdlib/pull/7611) _(by Deepak Singh)_
 -   [`d25df8a`](https://github.com/stdlib-js/stdlib/commit/d25df8a08092d7e85b7e3b4da57ae5570df03938) - **refactor:** rename file _(by Athan Reines)_
 -   [`c20d551`](https://github.com/stdlib-js/stdlib/commit/c20d5510f41201455c5660f7ca658de68fb0a401) - **refactor:** update paths _(by Aayush Khanna)_
 -   [`c17d1c9`](https://github.com/stdlib-js/stdlib/commit/c17d1c95b7537c91a8d4da9ba24b555895067e66) - **feat:** add support for accessor arrays and refactor `stats/base/cumaxabs` [(#5289)](https://github.com/stdlib-js/stdlib/pull/5289) _(by Vivek Maurya, Athan Reines)_
@@ -37,10 +50,11 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Aayush Khanna
 -   Athan Reines
+-   Deepak Singh
 -   Vivek Maurya
 
 </section>
