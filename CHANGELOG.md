@@ -2,9 +2,9 @@
 
 > Package changelog.
 
-<section class="release" id="unreleased">
+<section class="release" id="v0.3.0">
 
-## Unreleased (2025-11-21)
+## 0.3.0 (2026-01-31)
 
 <section class="features">
 
@@ -34,6 +34,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`2035f34`](https://github.com/stdlib-js/stdlib/commit/2035f344a1a469278042b7532f034dc6119933b3) - **docs:** add function documentation _(by Athan Reines)_
 -   [`e02e358`](https://github.com/stdlib-js/stdlib/commit/e02e358c5541ba0c4e5962dd15acb685b099b60c) - **docs:** fix example code in TSDoc comments _(by Philipp Burckhardt)_
 -   [`cb0a268`](https://github.com/stdlib-js/stdlib/commit/cb0a268e3bb793499ac8dd396e57d075837422ee) - **test:** update type expectations in `stats/base/cumaxabs` [(#7611)](https://github.com/stdlib-js/stdlib/pull/7611) _(by Deepak Singh)_
 -   [`d25df8a`](https://github.com/stdlib-js/stdlib/commit/d25df8a08092d7e85b7e3b4da57ae5570df03938) - **refactor:** rename file _(by Athan Reines)_
